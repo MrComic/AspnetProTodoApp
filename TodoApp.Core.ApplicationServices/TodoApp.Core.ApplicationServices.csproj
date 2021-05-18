@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Core.Domain\Framework.Core.Domain.csproj" />
+    <ProjectReference Include="..\TodoApp.Core.Domain\TodoApp.Core.Domain.csproj" />
+    <ProjectReference Include="..\TodoApp.Infra.Data.SqlServer.Queries\TodoApp.Infra.Data.SqlServer.Queries.csproj" />
+    <ProjectReference Include="..\TodoApp.Infra.Data.SqlServer\TodoApp.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>
