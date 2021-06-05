@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TodoApp.Endpoints.Api.Middlewares;
 using TodoApp.Endpoints.Api.StartupExtentions;
+using TodoApp.Infra.Data.SqlServer;
 using TodoApp.Infra.Data.SqlServer.Queries.Todo;
 
 namespace TodoApp.Endpoints.Api
@@ -46,8 +47,9 @@ namespace TodoApp.Endpoints.Api
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, TodoDbContext _context)
         {
+            _context.Database.EnsureCreated();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

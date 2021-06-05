@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  todoapp.endpoints.api:
+    image: ${DOCKER_REGISTRY-}todoappendpointsapi
+    build:
+        context: .
+        dockerfile: TodoApp.Endpoints.Api/Dockerfile
+  db:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    ports:
+        - '1433:1433'
+    environment:
+         - ACCEPT_EULA=Y
+         - SA_PASSWORD=Password@123
+    volumes:
+        - G:\MSSQL:/var/opt/mssql
